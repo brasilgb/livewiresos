@@ -10,13 +10,13 @@
             <div class="flex justify-between bg-gray-300">
                     <div>
                                         <button title="Cadastrar cliente"
-                                        class="px-2 py-1 font-semibold border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200">
+                                        class="inline-flex items-center font-medium px-2 py-2 leading-2 border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200">
                                         <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
-                                        class="w-6 mr-2"
+                                        class="inline-block w-5 h-5 mr-1"
                                         >
                                         <path
                                         stroke-linecap="round"
@@ -24,8 +24,7 @@
                                         stroke-width="2"
                                         d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                                         />
-                                        </svg> 
-                                        Cadastrar
+                                        </svg>Cadastrar
                                     </button>
                     </div>
                     <div>3</div>
