@@ -26,14 +26,16 @@
         <div class="mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-between">
                 <div>
-                    <button title="Cadastrar cliente"
-                        class="inline-flex items-center font-medium px-2 py-2 leading-2 border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200">
+                    <a title="Cadastrar cliente"
+                        class="inline-flex items-center font-medium px-2 py-2 leading-2 border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200"
+                        href="{{ route('clientes.create') }}"
+                        >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             class="inline-block w-5 h-5 mr-1">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                         </svg>{{ __('Cadastrar') }}
-                    </button>
+                    </a>
                 </div>
                 <div>
                     <div class="pt-0 relative mx-auto text-gray-600">

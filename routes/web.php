@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Livewire\Clientes\ShowCliente;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Clientes\{
+    ShowCliente,
+    CreateCliente,
+    EditCliente
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
 })->name('dashboard');
 
 Route::get('clientes', ShowCliente::class)->name('clientes')->middleware();
+Route::get('clientes/create-cliente', CreateCliente::class)->name('clientes.create')->middleware();
+Route::get('clientes/edit-cliente', EditCliente::class)->name('clientes.edit')->middleware();

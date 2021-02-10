@@ -11,7 +11,7 @@ class ShowCliente extends Component
     use WithPagination;
     public function render()
     {
-        $clientes = Cliente::paginate(10);
+        $clientes = Cliente::paginate(20);
         return view('livewire.clientes.show-cliente', compact('clientes'));
     }
 }
