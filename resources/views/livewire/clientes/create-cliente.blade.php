@@ -59,18 +59,120 @@
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                   <div class="container mx-auto">
-                           <form action="" class="px-4 my-10 mx-w-3xl mx-auto space-y-6">
-                               <div class="flex">
-                                   <div class="flex-none w-30 h-16">
-                                       <label for="cliente">Cliente</label>
-                                   </div>
-                                   <div class="flex-auto">
-                                       <input class="border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500" type="text" name="cliente" id="cliente">
-                                   </div>
-                                   </div>
-                           </form>
-                   </div>
+
+                           {{-- Aqui formulario --}}
+
+                           <form>
+                              <div class="px-8 pt-6 pb-8 mb-4 flex flex-col">
+                                <div class="-mx-3 md:flex mb-4">
+                                    <div class="md:w-1/2 px-3 mb-4 md:mb-0">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="cliente">
+                                        Nome do Cliente*
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="cliente" type="text" placeholder="Nome do cliente">
+                                      <div>
+                                        <span class="text-red-500 text-xs italic">
+                                          Please fill out this field.
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="md:w-1/2 px-3">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="email">
+                                        E-mail*
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="email" type="text" placeholder="seuemail@servidor.com">
+                                    </div>
+                                  </div>
+
+                                  <div class="-mx-3 md:flex mb-4">
+                                    <div class="md:w-1/2 px-3 mb-4 md:mb-0">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="telefone">
+                                        Telefone
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="telefone" type="text" placeholder="">
+                                    </div>
+                                    <div class="md:w-1/2 px-3">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="celular">
+                                        Celular*
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="celular" type="text" placeholder="">
+                                    </div>
+                                  </div>
+  
+                                  <div class="-mx-3 md:flex mb-4">
+                                    <div class="md:w-5 px-3 mb-4 md:mb-0">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="logradouro">
+                                        Logradouro*
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="logradouro" type="text" placeholder="Rua, avenida, estrada, linha, beco, etc...">
+                                    </div>
+                                    <div class="md:w-1/3 px-3">
+                                      <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="numero">
+                                        Número*
+                                      </label>
+                                      <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="numero" type="text" placeholder="">
+                                    </div>
+                                  </div>
+  
+
+                                <div class="-mx-3 md:flex mb-4">
+                                  <div class="md:w-full px-3">
+                                    <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="application-link">
+                                      Application Link*
+                                    </label>
+                                    <input class="w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-1" id="application-link" type="text" placeholder="http://....">
+                                  </div>
+                                </div>
+                                <div class="-mx-3 md:flex mb-2">
+                                  <div class="md:w-1/2 px-3 mb-4 md:mb-0">
+                                    <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="location">
+                                      Location*
+                                    </label>
+                                    <div>
+                                      <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-1 rounded" id="location">
+                                        <option>Abuja</option>
+                                        <option>Enugu</option>
+                                        <option>Lagos</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="md:w-1/2 px-3">
+                                    <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="job-type">
+                                      Job Type*
+                                    </label>
+                                    <div>
+                                      <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-1 rounded" id="job-type">
+                                        <option>Full-Time</option>
+                                        <option>Part-Time</option>
+                                        <option>Internship</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="md:w-1/2 px-3">
+                                    <label class="uppercase tracking-wide text-black text-xs font-bold mb-2" for="department">
+                                      Department*
+                                    </label>
+                                    <div>
+                                      <select class="w-full bg-gray-200 border border-gray-200 text-black text-xs py-3 px-4 pr-8 mb-1 rounded" id="department">
+                                        <option>Engineering</option>
+                                        <option>Design</option>
+                                        <option>Customer Support</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="-mx-3 md:flex mt-2">
+                                  <div class="md:w-full px-3">
+                                    <button class="md:w-full bg-gray-900 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-gray-500 hover:border-gray-100 rounded-full">
+                                      Button
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+
+                           {{-- Fim formulario --}}
+                   
             </div>
         </div>
     </div>
