@@ -25,7 +25,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-6">
         <div class="mb-2 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-between">
                 <div>
@@ -67,7 +67,7 @@
                         <div class="-mx-3 md:flex mb-4">
 
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="cliente">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="cliente">
                                     Nome*
                                 </label>
                             </div>
@@ -80,7 +80,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="email">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="email">
                                     E-mail*
                                 </label>
                             </div>
@@ -93,7 +93,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="telefone">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="telefone">
                                     Telefone
                                 </label>
                             </div>
@@ -106,7 +106,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="celular">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="celular">
                                     Celular*
                                 </label>
                             </div>
@@ -119,7 +119,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="logradouro">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="logradouro">
                                     Logradouro*
                                 </label>
                             </div>
@@ -132,7 +132,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="numero">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="numero">
                                     Número*
                                 </label>
                             </div>
@@ -145,7 +145,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="complemento">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="complemento">
                                     Complemento*
                                 </label>
                             </div>
@@ -158,7 +158,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="bairro">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="bairro">
                                     Bairro*
                                 </label>
                             </div>
@@ -171,7 +171,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="uf">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="uf">
                                     UF*
                                 </label>
                             </div>
@@ -184,7 +184,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="cidade">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="cidade">
                                     Cidade*
                                 </label>
                             </div>
@@ -197,7 +197,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="cep">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="cep">
                                     CEP*
                                 </label>
                             </div>
@@ -210,7 +210,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="cpf">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="cpf">
                                     CPF*
                                 </label>
                             </div>
@@ -223,7 +223,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="rg">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="rg">
                                     RG
                                 </label>
                             </div>
@@ -236,7 +236,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="contato">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="contato">
                                     Contato
                                 </label>
                             </div>
@@ -249,7 +249,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="telefone_contato">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="telefone_contato">
                                     Telefone contato
                                 </label>
                             </div>
@@ -262,7 +262,7 @@
 
                         <div class="-mx-3 md:flex mb-4">
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-bold mb-2" for="celular_contato">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="celular_contato">
                                     Celular contato
                                 </label>
                             </div>
@@ -277,7 +277,7 @@
                     <div class="-mx-3 md:flex mt-2">
                         <div class="md:w-full px-3">
                             <button
-                                class="md:w-100 bg-blue-900 text-white font-bold py-2 px-4 border-gray-200 hover:border-gray-100 rounded">
+                                class="md:w-100 bg-blue-900 text-white font-medium py-2 px-4 border-gray-200 hover:border-gray-100 rounded">
                                 Button
                             </button>
                         </div>
