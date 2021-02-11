@@ -30,7 +30,7 @@ class ClienteFactory extends Factory
             'numero' => $this->faker->buildingNumber,
             'complemento' => 'casa',
             'bairro' => 'Bairro',
-            'estado' => $this->faker->state,
+            'uf' => $this->faker->state,
             'cidade' => $this->faker->city,
             'cep' => $this->faker->postcode,
             'cpf' => '86868686868',

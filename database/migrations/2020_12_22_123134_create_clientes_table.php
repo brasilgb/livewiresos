@@ -23,7 +23,7 @@ class CreateClientesTable extends Migration
             $table->integer('numero');
             $table->string('complemento', 50)->nullable();
             $table->string('bairro', 50);
-            $table->char('estado', 100);
+            $table->string('uf', 50);
             $table->string('cidade', 50);
             $table->string('cep', 20);
             $table->string('cpf', 20)->nullable();

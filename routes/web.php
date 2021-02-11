@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('clientes', ShowCliente::class)->name('clientes')->middleware();
-Route::get('clientes/create-cliente', CreateCliente::class)->name('clientes.create')->middleware();
-Route::get('clientes/edit-cliente', EditCliente::class)->name('clientes.edit')->middleware();
+Route::middleware(['auth:sanctum', 'verified'])->get('clientes', ShowCliente::class)->name('clientes');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('clientes/create', CreateCliente::class)->name('clientes.create');
+Route::middleware(['auth:sanctum', 'verified'])->get('clientes/edit', EditCliente::class)->name('clientes.edit');

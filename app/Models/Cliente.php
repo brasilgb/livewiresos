@@ -20,6 +20,7 @@ protected $fillable = [
     'numero',
     'complemento',
     'bairro',
+    'uf',
     'estado',
     'cidade',
     'cep',
