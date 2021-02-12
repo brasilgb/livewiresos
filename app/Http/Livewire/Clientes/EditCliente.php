@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 
 class EditCliente extends Component
 {
+    public $cliente;
     public $idcliente;
     public $nome;
     public $email;
@@ -28,7 +29,19 @@ class EditCliente extends Component
     public $telefone_contato;
     public $celular_contato;
 
-
+    protected $rules = [
+        'nome' => 'required',
+        'email' => 'required|email|unique:clientes,email',
+        'celular' => 'required',
+        'logradouro' => 'required',
+        'numero' => 'required',
+        'complemento' => 'required',
+        'bairro' => 'required',
+        'uf' => 'required',
+        'cidade' => 'required',
+        'cep' => 'required',
+        'cpf' => 'required|unique:clientes',
+    ];
 
     public function mount(Cliente $cliente)
     {
@@ -59,20 +72,8 @@ class EditCliente extends Component
     public function update()
     {
         $cliente = Cliente::find($this->idcliente);
-        $rules = [
-            'nome' => 'required',
-            'email' => ['required','email', Rule::unique('clientes')->ignore($this->idcliente, 'id_cliente')],
-            'celular' => 'required',
-            'logradouro' => 'required',
-            'numero' => 'required',
-            'complemento' => 'required',
-            'bairro' => 'required',
-            'uf' => 'required',
-            'cidade' => 'required',
-            'cep' => 'required',
-            'cpf' => 'required',
-        ];
-        $this->validate($rules);
+
+        $this->validate();
 
         $data = [
             'nome' => $this->nome,
