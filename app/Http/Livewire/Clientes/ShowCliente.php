@@ -9,9 +9,14 @@ use Livewire\WithPagination;
 class ShowCliente extends Component
 {
     use WithPagination;
+
+    public $search;
+ 
+
     public function render()
     {
-        $clientes = Cliente::paginate(20);
+        $search = '%' . $this->search . '%';
+        $clientes = Cliente::where('cliente', 'like', $search)->paginate(15);
         return view('livewire.clientes.show-cliente', compact('clientes'));
     }
 }
