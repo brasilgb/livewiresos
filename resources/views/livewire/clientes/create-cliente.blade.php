@@ -32,7 +32,7 @@
 
                 <div class="flex justify-between border-b-2 border-gray-200">
                     <div>
-                        <a title="Cadastrar cliente"
+                        <a title="Clientes"
                             class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 hover:border-gray-100 bg-blue-500 text-white rounded-md hover:text-gray-200"
                             href="{{ route('clientes') }}"
                             >
@@ -45,7 +45,7 @@
                     </div>
                     <div>
                         <div class="m-2 pt-0 relative text-gray-600">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 
                 {{-- Aqui formulario --}}
 
-                <form method="POST" wire:submit.prevent="create">
+                <form method="POST" wire:submit.prevent="update">
                     <div class="px-8 pt-6 pb-8 mb-4 flex flex-col">
                         <div>
                             @if (session()->has('message'))
@@ -71,16 +71,16 @@
                         <div class="-mx-3 md:flex mb-4">
 
                             <div class="md:w-1/3 px-3 mb-4 md:mb-0 pt-4">
-                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="cliente">
+                                <label class="pt-2 tracking-wide text-black text-md font-medium mb-2" for="nome">
                                     Nome*
                                 </label>
                             </div>
                             <div class="md:w-full px-3">
                                 <input
                                     class="w-full bg-gray-100 text-black border border-gray-300 rounded py-3 px-4 mb-1 focus:border-blue-300 hover:border-red-300"
-                                    id="cliente" type="text"  placeholder="" wire:model="cliente">
+                                    id="nome" type="text"  placeholder="" wire:model="nome">
                                     <div class="error-message text-red-500">
-                                        @error('cliente')
+                                        @error('nome')
                                             {{$message}}
                                         @enderror
                                     </div>
@@ -345,7 +345,7 @@
                             @endif
                         </div>
                     <div class="md:flex mt-0 mb-0">
-                       
+
                         <div class="md:w-full">
                             <button
                                 class="float-right bg-blue-500 text-white font-medium py-2 px-10 mt-2 mb-0 border-gray-200 hover:border-gray-100 rounded">
@@ -357,7 +357,7 @@
                             </button>
                         </div>
                     </div>
-                </div> 
+                </div>
 
             </div>
         </div>

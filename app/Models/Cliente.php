@@ -10,32 +10,34 @@ class Cliente extends Model
     use HasFactory;
     // protected $table = 'clientes';
     protected $primaryKey = 'id_cliente';
-//    public $incrementing = false;
-protected $fillable = [
-    'cliente',
-    'email',
-    'telefone',
-    'celular',
-    'logradouro',
-    'numero',
-    'complemento',
-    'bairro',
-    'uf',
-    'estado',
-    'cidade',
-    'cep',
-    'cpf',
-    'rg',
-    'contato',
-    'telefone_contato',
-    'celular_contato'
-];
+    //    public $incrementing = false;
+    protected $fillable = [
+        'nome',
+        'email',
+        'telefone',
+        'celular',
+        'logradouro',
+        'numero',
+        'complemento',
+        'bairro',
+        'uf',
+        'estado',
+        'cidade',
+        'cep',
+        'cpf',
+        'rg',
+        'contato',
+        'telefone_contato',
+        'celular_contato'
+    ];
 
-public function ordens(){
-    return $this->hasMany(Ordem::class, 'cliente_id', 'id_cliente');
-}
+    public function ordens()
+    {
+        return $this->hasMany(Ordem::class, 'cliente_id', 'id_cliente');
+    }
 
-public function agendas(){
-    return $this->hasMany(Agenda::class, 'cliente_id', 'id_cliente');
-}
+    public function agendas()
+    {
+        return $this->hasMany(Agenda::class, 'cliente_id', 'id_cliente');
+    }
 }

@@ -77,7 +77,7 @@
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
                                 {{$cliente->id_cliente}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
-                                {{$cliente->cliente}}</td>
+                                {{$cliente->nome}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
                                 {{$cliente->email}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
@@ -94,7 +94,7 @@
                                         </svg>
                                     </a>
                                     <a title="Editar dados do cliente"
-                                    href="{{ route('clientes.edit') }}"
+                                    href="{{ route('clientes.edit', ['cliente' => $cliente->id_cliente]) }}"
                                         class="px-2 py-1 font-semibold border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" class="w-5">

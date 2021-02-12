@@ -11,12 +11,12 @@ class ShowCliente extends Component
     use WithPagination;
 
     public $search;
- 
+
 
     public function render()
     {
         $search = '%' . $this->search . '%';
-        $clientes = Cliente::where('cliente', 'like', $search)->paginate(15);
+        $clientes = Cliente::where('nome', 'like', $search)->paginate(15);
         return view('livewire.clientes.show-cliente', compact('clientes'));
     }
 }

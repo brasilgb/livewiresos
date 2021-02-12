@@ -22,7 +22,7 @@ class ClienteFactory extends Factory
     public function definition()
     {
         return [
-            'cliente' => $this->faker->name,
+            'nome' => $this->faker->name,
             'email' => $this->faker->email,
             'telefone' => $this->faker->PhoneNumber,
             'celular' => $this->faker->PhoneNumber,

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CreateCliente extends Component
 {
-    public $cliente;
+    public $nome;
     public $email;
     public $telefone;
     public $celular;
@@ -27,8 +27,8 @@ class CreateCliente extends Component
     public $celular_contato;
 
     protected $rules = [
-        'cliente' => 'required',
-        'email' => 'required|email',
+        'nome' => 'required',
+        'email' => 'required|email|unique:clientes',
         'celular' => 'required',
         'logradouro' => 'required',
         'numero' => 'required',
@@ -37,7 +37,7 @@ class CreateCliente extends Component
         'uf' => 'required',
         'cidade' => 'required',
         'cep' => 'required',
-        'cpf' => 'required',
+        'cpf' => 'required|unique:clientes',
     ];
 
     public function render()
@@ -54,7 +54,7 @@ class CreateCliente extends Component
     {
         $this->validate();
         $data = [
-            'cliente' => $this->cliente,
+            'nome' => $this->nome,
             'email' => $this->email,
             'telefone' => $this->telefone,
             'celular' => $this->celular,
@@ -72,7 +72,7 @@ class CreateCliente extends Component
             'celular_contato' => $this->celular_contato
         ];
         Cliente::create($data);
-        $this->cliente =
+        $this->nome =
         $this->email =
         $this->telefone =
         $this->celular =
