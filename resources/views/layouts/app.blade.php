@@ -26,8 +26,8 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="bg-gray-100 border-2 border-gray-200">
+                    <div class="max-w-7xl mx-auto py-0 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -39,9 +39,11 @@
             </main>
         </div>
         <footer class="p-4 text-center border-t-2 border-gray-300 shadow-inner">
-            <h3>Footer</h3>
+            <h3><span>Copyright © {{ date("Y")}} <a class="text-blue-700 hover:text-blue-400" href="https://abrasildigital.com.br/">ABrasil Digital</a>. Todos os
+                direitos reservados.</span></h3>
            </footer>
         @stack('modals')
         @livewireScripts
+        
     </body>
 </html>

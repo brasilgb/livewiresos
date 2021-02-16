@@ -22,8 +22,13 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('clientes') }}" wire:key='Clientes' :active="request()->routeIs('clientes*')">
+                    <x-jet-nav-link href="{{ route('clients') }}" wire:key='Clientes' :active="request()->routeIs('clients*')">
                         {{ __('Clientes') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('orders') }}" wire:key='Ordens' :active="request()->routeIs('orders*')">
+                        {{ __('Ordens') }}
                     </x-jet-nav-link>
                 </div>
             </div>

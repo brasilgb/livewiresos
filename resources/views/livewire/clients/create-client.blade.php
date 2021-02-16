@@ -33,7 +33,7 @@
                 <div class="flex justify-between border-b-2 border-gray-200">
                     <div>
                         <a title="Clientes"
-                            class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 hover:border-gray-100 bg-blue-500 text-white rounded-md hover:text-gray-200"
+                            class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 hover:border-gray-100 bg-blue-600 hover:bg-blue-700 text-white rounded-md hover:text-gray-200"
                             href="{{ route('clientes') }}"
                             >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -53,7 +53,7 @@
 
                 {{-- Aqui formulario --}}
 
-                <form method="POST" wire:submit.prevent="update">
+                <form method="POST" wire:submit.prevent="create">
                     <div class="px-8 pt-6 pb-8 mb-4 flex flex-col">
                         <div>
                             @if (session()->has('message'))
@@ -113,7 +113,7 @@
                             </div>
                             <div class="md:w-full px-3">
                                 <input
-                                    class="w-full bg-gray-100 text-black border border-gray-300 rounded py-3 px-4 mb-1 focus:border-blue-300 hover:border-red-300"
+                                    class="telefone w-full bg-gray-100 text-black border border-gray-300 rounded py-3 px-4 mb-1 focus:border-blue-300 hover:border-red-300"
                                     id="telefone" type="text"  placeholder="" wire:model="telefone">
                             </div>
                         </div>
@@ -332,7 +332,9 @@
                                     id="celular_contato" type="text" placeholder="" wire:model="celular_contato">
                             </div>
                         </div>
-                        <div>
+                        
+                    <div class="flex mt-0 mb-0">
+                    <div class="flex-grow">
                             @if (session()->has('message'))
                                 <div class="p-4 mb-1 bg-green-400 text-white rounded">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -344,11 +346,9 @@
                                 </div>
                             @endif
                         </div>
-                    <div class="md:flex mt-0 mb-0">
-
-                        <div class="md:w-full">
+                        <div class="flex-grow">
                             <button
-                                class="float-right bg-blue-500 text-white font-medium py-2 px-10 mt-2 mb-0 border-gray-200 hover:border-gray-100 rounded">
+                                class="float-right bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-10 mt-2 mb-0 border-gray-200 hover:border-gray-100 rounded">
                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 class="inline-block w-5 h-5 mr-1">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Client extends Model
 {
     use HasFactory;
-    // protected $table = 'clientes';
+    protected $table = 'clientes';
     protected $primaryKey = 'id_cliente';
     //    public $incrementing = false;
     protected $fillable = [
@@ -33,7 +33,7 @@ class Cliente extends Model
 
     public function ordens()
     {
-        return $this->hasMany(Ordem::class, 'cliente_id', 'id_cliente');
+        return $this->hasMany(Order::class, 'cliente_id', 'id_cliente');
     }
 
     public function agendas()

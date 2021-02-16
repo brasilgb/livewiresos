@@ -31,8 +31,8 @@
                     <div class="flex justify-between border-b-2 border-gray-200">
                         <div>
                             <a title="Cadastrar cliente"
-                                class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200"
-                                href="{{ route('clientes.create') }}"
+                                class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 bg-blue-600 hover:bg-blue-700 text-white rounded-md hover:text-gray-200"
+                                href="{{ route('clients.create') }}"
                                 >
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     class="inline-block w-5 h-5 mr-1">
@@ -59,8 +59,6 @@
                         </div>
                     </div>
 
-
-
                 <table class="w-full divide-y divide-gray-200">
                     <thead class="bg-gray-300">
                         <tr>
@@ -72,21 +70,21 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach ($clientes as $cliente)
+                        @foreach ($clients as $client)
                         <tr>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
-                                {{$cliente->id_cliente}}</td>
+                                {{$client->id_cliente}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
-                                {{$cliente->nome}}</td>
+                                {{$client->nome}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
-                                {{$cliente->email}}</td>
+                                {{$client->email}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
-                                {{$cliente->telefone}}</td>
+                                {{$client->telefone}}</td>
                             <td class="px-2 py-2 text-left text-base font-normal text-grady-500 whitespace-normal">
                                 <div class="flex space-x-1">
                                     <a title="Ordens de serviço do cliente"
-                                    href="#"
-                                        class="px-2 py-1 font-semibold border-2 border-gray-200 bg-gray-500 text-white rounded-md hover:text-gray-200">
+                                    href="#" wire:click="orders-clients"
+                                        class="px-2 py-1 font-semibold border-2 border-gray-200  bg-gray-600 hover:bg-gray-700 text-white rounded-md hover:text-gray-200">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" class="w-5">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -94,22 +92,21 @@
                                         </svg>
                                     </a>
                                     <a title="Editar dados do cliente"
-                                    href="{{ route('clientes.edit', ['cliente' => $cliente->id_cliente]) }}"
-                                        class="px-2 py-1 font-semibold border-2 border-gray-200 bg-blue-500 text-white rounded-md hover:text-gray-200">
+                                    href="{{ route('clients.edit', ['client' => $client->id_cliente]) }}"
+                                        class="px-2 py-1 font-semibold border-2 border-gray-200 bg-blue-600 hover:bg-blue-700 text-white rounded-md hover:text-gray-200">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" class="w-5">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                         </svg>
                                     </a>
-                                    <a title="Excluir este cliente"
-                                        class="px-2 py-1 font-semibold border-2 border-gray-200 bg-red-700 text-white rounded-md hover:text-gray-200">
+                                    <button class="px-2 py-1 font-semibold border-2 border-gray-200 bg-red-600 hover:bg-red-700 text-white rounded-md hover:text-gray-200" wire:click="confirmClientDeletion( {{$client->id_cliente}} )" wire:loading.attr="disabled">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" class="w-5">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                         </svg>
-                                    </a>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -117,9 +114,45 @@
                     </tbody>
                 </table>
                 <div class="px-4 py-4 mt-4 border-t-2 border-gray-200">
-                    {{$clientes->links()}}
+
+                    {{$clients->links()}}
                 </div>
             </div>
+            
+ <!-- Delete Cliente Confirmation Modal -->
+ <x-jet-dialog-modal wire:model="confirmingClientDeletion">
+    
+    <x-slot name="title">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="inline-block w-5 h-5 mr-1 mb-1">
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+{{ __('Deletar Cliente') }}
+    </x-slot>
+
+    <x-slot name="content">
+        <div class="text-red-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="inline-block w-10 h-10 mr-1">
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        {{ __('Têm certeza que deseja deletar este cliente da base de dados do sistema?') }}
+        </div>
+    </x-slot>
+
+    <x-slot name="footer">
+        <x-jet-secondary-button wire:click="$set('confirmingClientDeletion', false)" wire:loading.attr="disabled">
+            {{ __('Cancelar') }}
+        </x-jet-secondary-button>
+
+        <x-jet-danger-button class="ml-2" wire:click="deleteClient( {{ $confirmingClientDeletion}} )" wire:loading.attr="disabled">
+            {{ __('Sim, Deletar') }}
+        </x-jet-danger-button>
+    </x-slot>
+</x-jet-dialog-modal>
+
         </div>
     </div>
 </div>

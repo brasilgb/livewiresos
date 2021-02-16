@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Ordem extends Model
+class Order extends Model
 {
     use HasFactory;
     protected $table = 'ordens';
@@ -36,8 +36,8 @@ class Ordem extends Model
 
     ];
 
-    public function clientes(){
-        return $this->belongsTo(Cliente::class, 'cliente_id', 'id_cliente');
+    public function clients(){
+        return $this->belongsTo(Client::class, 'cliente_id', 'id_cliente');
     }
 
     public function pecas(){

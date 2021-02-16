@@ -1,10 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\Clientes\{
-    ShowCliente,
-    CreateCliente,
-    EditCliente
+use App\Http\Livewire\Clients\{
+    ShowClient,
+    CreateClient,
+    EditClient
+};
+use App\Http\Livewire\Orders\{
+    ShowOrder,
+    CreateOrder,
+    EditOrder
 };
 
 /*
@@ -23,6 +28,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('clientes', ShowCliente::class)->name('clientes');
-Route::middleware(['auth:sanctum', 'verified'])->get('clientes/create', CreateCliente::class)->name('clientes.create');
-Route::middleware(['auth:sanctum', 'verified'])->get('clientes/edit/{cliente}', EditCliente::class)->name('clientes.edit');
+Route::middleware(['auth:sanctum', 'verified'])->get('clients', ShowClient::class)->name('clients');
+Route::middleware(['auth:sanctum', 'verified'])->get('clients/create', CreateClient::class)->name('clients.create');
+Route::middleware(['auth:sanctum', 'verified'])->get('clients/edit/{client}', EditClient::class)->name('clients.edit');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('orders', ShowOrder::class)->name('orders');
+Route::middleware(['auth:sanctum', 'verified'])->get('orders/create', CreateOrder::class)->name('orders.create');
+Route::middleware(['auth:sanctum', 'verified'])->get('orders/edit/{order}', EditOrder::class)->name('orders.edit');

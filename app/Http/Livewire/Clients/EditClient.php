@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Livewire\Clientes;
+namespace App\Http\Livewire\Clients;
 
-use App\Models\Cliente;
+use App\Models\Client;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class EditCliente extends Component
+class EditClient extends Component
 {
-    public $cliente;
-    public $idcliente;
+    public $client;
+    public $idclient;
     public $nome;
     public $email;
     public $telefone;
@@ -29,9 +29,11 @@ class EditCliente extends Component
     public $telefone_contato;
     public $celular_contato;
 
-    protected $rules = [
+    public function rules()
+    {
+        return [
         'nome' => 'required',
-        'email' => 'required|email|unique:clientes,email',
+        'email' => ['required', Rule::unique('clients')->ignore($this->idclient, 'id_client')],
         'celular' => 'required',
         'logradouro' => 'required',
         'numero' => 'required',
@@ -40,28 +42,29 @@ class EditCliente extends Component
         'uf' => 'required',
         'cidade' => 'required',
         'cep' => 'required',
-        'cpf' => 'required|unique:clientes',
-    ];
+        'cpf' => ['required', Rule::unique('clients')->ignore($this->idclient, 'id_client')]
+        ];
+    }
 
-    public function mount(Cliente $cliente)
+    public function mount(Client $client)
     {
-        $this->idcliente = $cliente->id_cliente;
-        $this->nome = $cliente->nome;
-        $this->email = $cliente->email;
-        $this->telefone = $cliente->telefone;
-        $this->celular = $cliente->celular;
-        $this->logradouro = $cliente->logradouro;
-        $this->numero = $cliente->numero;
-        $this->complemento = $cliente->complemento;
-        $this->bairro = $cliente->bairro;
-        $this->uf = $cliente->uf;
-        $this->cidade = $cliente->cidade;
-        $this->cep = $cliente->cep;
-        $this->cpf = $cliente->cpf;
-        $this->rg = $cliente->rg;
-        $this->contato = $cliente->contato;
-        $this->telefone_contato = $cliente->telefone_contato;
-        $this->celular_contato = $cliente->celular_contato;
+        $this->idclient = $client->id_client;
+        $this->nome = $client->nome;
+        $this->email = $client->email;
+        $this->telefone = $client->telefone;
+        $this->celular = $client->celular;
+        $this->logradouro = $client->logradouro;
+        $this->numero = $client->numero;
+        $this->complemento = $client->complemento;
+        $this->bairro = $client->bairro;
+        $this->uf = $client->uf;
+        $this->cidade = $client->cidade;
+        $this->cep = $client->cep;
+        $this->cpf = $client->cpf;
+        $this->rg = $client->rg;
+        $this->contato = $client->contato;
+        $this->telefone_contato = $client->telefone_contato;
+        $this->celular_contato = $client->celular_contato;
     }
 
     public function updated($email)
@@ -71,7 +74,7 @@ class EditCliente extends Component
 
     public function update()
     {
-        $cliente = Cliente::find($this->idcliente);
+        $client = Client::find($this->idclient);
 
         $this->validate();
 
@@ -94,13 +97,15 @@ class EditCliente extends Component
             'celular_contato' => $this->celular_contato
         ];
 
-        $cliente->update($data);
+        $client->update($data);
 
-        session()->flash('message', 'Dados do cliente inseridos com successo!');
+        session()->flash('message', 'Dados do clientes inseridos com successo!');
     }
+
+
 
     public function render()
     {
-        return view('livewire.clientes.edit-cliente');
+        return view('livewire.clients.edit-client');
     }
 }

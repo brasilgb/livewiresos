@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Livewire\Clientes;
+namespace App\Http\Livewire\Clients;
 
-use App\Models\Cliente;
+use App\Models\Client;
 use Livewire\Component;
 use Illuminate\Http\Request;
 
-class CreateCliente extends Component
+use Manny\Manny as Manny;
+
+class CreateClient extends Component
 {
     public $nome;
     public $email;
@@ -28,10 +30,10 @@ class CreateCliente extends Component
 
     protected $rules = [
         'nome' => 'required',
-        'email' => 'required|email|unique:clientes',
+        'email' => 'required|email|unique:clients',
         'celular' => 'required',
         'logradouro' => 'required',
-        'numero' => 'required',
+        'numero' => 'required|numeric',
         'complemento' => 'required',
         'bairro' => 'required',
         'uf' => 'required',
@@ -42,12 +44,20 @@ class CreateCliente extends Component
 
     public function render()
     {
-        return view('livewire.clientes.create-cliente');
+        return view('livewire.clients.create-client');
     }
 
-    public function updated($email)
+    public function updated($field)
     {
-        $this->validateOnly($email);
+        $this->validateOnly($field);
+
+        $field == 'telefone' ? $this->telefone = Manny::mask($this->telefone, "(11) 1111-1111") :'';
+        $field == 'celular'  ? $this->celular  = Manny::mask($this->celular,  "(11) 1111-11111"):'';
+        $field == 'cep'  ? $this->cep  = Manny::mask($this->cep,  "11111-111"):'';
+        $field == 'cpf'  ? $this->cpf  = Manny::mask($this->cpf,  "111111111/11"):'';
+        $field == 'rg'  ? $this->rg  = Manny::mask($this->rg,  "1111111111"):'';
+        $field == 'telefone_contato'  ? $this->telefone_contato  = Manny::mask($this->telefone_contato,  "(11) 1111-1111"):'';
+        $field == 'celular_contato'  ? $this->celular_contato  = Manny::mask($this->celular_contato,  "(11) 1111-11111"):'';
     }
 
     public function create(Request $request)
@@ -71,7 +81,7 @@ class CreateCliente extends Component
             'telefone_contato' => $this->telefone_contato,
             'celular_contato' => $this->celular_contato
         ];
-        Cliente::create($data);
+        Client::create($data);
         $this->nome =
         $this->email =
         $this->telefone =
