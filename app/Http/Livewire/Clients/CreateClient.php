@@ -6,8 +6,6 @@ use App\Models\Client;
 use Livewire\Component;
 use Illuminate\Http\Request;
 
-use Manny\Manny as Manny;
-
 class CreateClient extends Component
 {
     public $nome;
@@ -51,13 +49,13 @@ class CreateClient extends Component
     {
         $this->validateOnly($field);
 
-        $field == 'telefone' ? $this->telefone = Manny::mask($this->telefone, "(11) 1111-1111") :'';
-        $field == 'celular'  ? $this->celular  = Manny::mask($this->celular,  "(11) 1111-11111"):'';
-        $field == 'cep'  ? $this->cep  = Manny::mask($this->cep,  "11111-111"):'';
-        $field == 'cpf'  ? $this->cpf  = Manny::mask($this->cpf,  "111111111/11"):'';
-        $field == 'rg'  ? $this->rg  = Manny::mask($this->rg,  "1111111111"):'';
-        $field == 'telefone_contato'  ? $this->telefone_contato  = Manny::mask($this->telefone_contato,  "(11) 1111-1111"):'';
-        $field == 'celular_contato'  ? $this->celular_contato  = Manny::mask($this->celular_contato,  "(11) 1111-11111"):'';
+        // $field == 'telefone' ? $this->telefone = Manny::mask($this->telefone, "(11) 1111-1111") :'';
+        // $field == 'celular'  ? $this->celular  = Manny::mask($this->celular,  "(11) 1111-11111"):'';
+        // $field == 'cep'  ? $this->cep  = Manny::mask($this->cep,  "11111-111"):'';
+        // $field == 'cpf'  ? $this->cpf  = Manny::mask($this->cpf,  "111111111/11"):'';
+        // $field == 'rg'  ? $this->rg  = Manny::mask($this->rg,  "1111111111"):'';
+        // $field == 'telefone_contato'  ? $this->telefone_contato  = Manny::mask($this->telefone_contato,  "(11) 1111-1111"):'';
+        // $field == 'celular_contato'  ? $this->celular_contato  = Manny::mask($this->celular_contato,  "(11) 1111-11111"):'';
     }
 
     public function create(Request $request)
