@@ -12,11 +12,15 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('jquery-ui/jquery-ui.css') }}">
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ asset('jquery-ui/external/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('jquery-ui/jquery-ui.js') }}"></script>
+
     </head>
     <body class="flex flex-col min-h-screen font-sans antialiased">
         <x-jet-banner />

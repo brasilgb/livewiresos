@@ -30,7 +30,7 @@ class CreateClient extends Component
 
     protected $rules = [
         'nome' => 'required',
-        'email' => 'required|email|unique:clients',
+        'email' => 'required|email|unique:clientes',
         'celular' => 'required',
         'logradouro' => 'required',
         'numero' => 'required|numeric',
@@ -100,4 +100,5 @@ class CreateClient extends Component
         $this->celular_contato = null;
         session()->flash('message', 'Dados do cliente inseridos com successo!');
     }
+
 }

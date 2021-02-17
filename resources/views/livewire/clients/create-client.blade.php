@@ -16,7 +16,7 @@
                         <li class="px-2 text-gray-400"><a href="/" class="no-underline text-indigo">{{ __('Home') }}</a>
                         </li>
                         <li>/</li>
-                        <li class="px-2 text-gray-400"><a href="{{ route('clientes') }}"> {{__('Clientes') }} </a></li>
+                        <li class="px-2 text-gray-400"><a href="{{ route('clients') }}"> {{__('Clientes') }} </a></li>
                         <li>/</li>
                         <li class="px-2 text-gray-500">{{ __('Cadastrar') }}</li>
                     </ol>
@@ -34,7 +34,7 @@
                     <div>
                         <a title="Clientes"
                             class="inline-flex items-center m-2 font-medium px-2 py-2 leading-2 border-2 border-gray-200 hover:border-gray-100 bg-blue-600 hover:bg-blue-700 text-white rounded-md hover:text-gray-200"
-                            href="{{ route('clientes') }}"
+                            href="{{ route('clients') }}"
                             >
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                             class="inline-block w-5 h-5 mr-1">
